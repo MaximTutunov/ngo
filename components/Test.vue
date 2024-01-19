@@ -16,7 +16,7 @@
 </script>
 
 <style  scoped>
-main {
+.main {
   text-align: left;
 }
 </style>

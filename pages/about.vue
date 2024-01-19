@@ -1,31 +1,22 @@
 <template>
-  <div class="main">
-    <h1>Nuxt JS</h1>
-    <p>And this is about page</p>
+  <div class="container">
+    <About />
   </div>
 </template>
 
 <script>
- export default {
-    data() {
-      return {
-        testData: ''
-      }
-    }
+  export default {
+    
   }
 </script>
 
-<style  scoped>
-
-.main {
-  text-align: left;
-}
-
-p {
-  color: red;
-}
-
-h1 {
-  color: lightblue;
+<style scoped>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 </style>
