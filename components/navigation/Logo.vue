@@ -1,12 +1,17 @@
 <template>
   <h1>
-I am Navigation
+{{title}}
   </h1>
 </template>
 
 <script>
   export default {
-
+props:{
+  title:{
+    type: String,
+    default:'NGOdefault',
+  }
+}
   }
 </script>
 

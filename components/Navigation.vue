@@ -1,6 +1,6 @@
 <template>
       <nav class="navigation">
-    <Logo/>
+    <Logo :title="logoText"/>
       <nuxt-link to="/">Main</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
      <button class="button">{{text}}</button>
@@ -17,7 +17,8 @@ components:{
 },
 data(){
   return{
-  text: "HellRAiser"
+  text: "HellRAiser",
+  logoText: "NKO Project",
 }
 }
   }
