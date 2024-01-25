@@ -3,8 +3,10 @@
     <Logo :title="logoText"/>
       <nuxt-link to="/">Main</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
-     <button class="button">{{text}}</button>
-     <Modal />
+     <button v-if="showBtn1" class="button">{{text}}</button>
+     <button v-else-if="showBtn2" class="button">test 1</button>
+     <button v-else class="button">test 2</button>
+     <Modal v-if="false"/>
     </nav>
 
 </template>
@@ -17,8 +19,12 @@ components:{
 },
 data(){
   return{
-  text: "HellRAiser",
+  text: "Enter",
   logoText: "NKO Project",
+  showBtn1: false,
+  showBtn2: false,
+
+
 }
 }
   }
@@ -31,7 +37,7 @@ data(){
   height: 80px;
   padding: 20px;
   position: fixed;
-  color: red;
+  color: rgb(60, 0, 255);
   top: 0;
   left: 0;
   display: flex;
