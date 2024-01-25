@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <nav class="navigation">
+      <nav class="navigation">
     <Logo/>
       <nuxt-link to="/">Main</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
-      <nuxt-link to="/id">Id page</nuxt-link>
-      <nuxt-link to="/id/123">ID 123</nuxt-link>
+     <button class="button">{{text}}</button>
+     <Modal />
     </nav>
-  </div>
+
 </template>
 
 <script>
@@ -15,6 +14,11 @@ import Logo from './navigation/Logo';
 export default {
 components:{
   Logo
+},
+data(){
+  return{
+  text: "HellRAiser"
+}
 }
   }
 </script>
@@ -33,5 +37,20 @@ components:{
   align-items: center;
   justify-content: space-between;
   background: lightblue;
+}
+.button{
+  width: 100px;
+  padding: 10px 15px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+.button:hover{
+  background: black;
+  color: white;
+  transition: .3s;
 }
 </style>

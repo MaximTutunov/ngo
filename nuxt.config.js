@@ -1,4 +1,5 @@
 export default {
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ngo',
@@ -12,6 +13,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

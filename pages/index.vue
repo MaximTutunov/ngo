@@ -16,6 +16,8 @@ export default {
 
 <style scoped>
 .container {
+  background: url('~static/images/bgd.jpeg') center no-repeat;
+  background-size: cover;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
