@@ -1,12 +1,12 @@
 <template>
       <nav class="navigation">
     <Logo :title="logoText"/>
-      <nuxt-link to="/">Main</nuxt-link>
+      <nuxt-link v-for ="elem in linksArray" class="link" :to="elem.to" :key="elem.title">{{elem.title}}</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
-     <button v-if="showBtn1" class="button">{{text}}</button>
-     <button v-else-if="showBtn2" class="button">test 1</button>
-     <button v-else class="button">test 2</button>
-     <Modal v-if="false"/>
+    <button  class="button" @click="counter+=1">{{text}}</button>
+    <p>{{ counter }}</p>
+    <input type="checkbox" v-model="showModal"/>
+     <Modal v-show="showModal"/>
     </nav>
 
 </template>
@@ -21,10 +21,12 @@ data(){
   return{
   text: "Enter",
   logoText: "NKO Project",
-  showBtn1: false,
-  showBtn2: false,
-
-
+ linksArray: [
+  {to:'/', title:'Main'},
+  {to:'/about', title:'about page'},
+ ],
+ showModal: false,
+ counter: 0,
 }
 }
   }

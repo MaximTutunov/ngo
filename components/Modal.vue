@@ -5,7 +5,7 @@
       <h1>Вход</h1>
       <label class="label">
         Email
-        <input class="input" type="email">
+        <input class="input" type="email" v-model="email">
       </label>
       <label class="label">
         Пароль
@@ -18,7 +18,9 @@
 
 <script>
   export default {
-    
+data(){return{
+  email:'shmeiko',
+}}
   }
 </script>
 
