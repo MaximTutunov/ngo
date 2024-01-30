@@ -4,7 +4,7 @@
       <nuxt-link v-for ="elem in linksArray" class="link" :to="elem.to" :key="elem.title">{{elem.title}}</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
     <button  class="button" @click="toggleModal">{{text}}</button>
-     <Modal v-show="showModal" :onToggle="toggleModal"/>
+     <Modal v-show="showModal" @modalClose="toggleModal"/>
     </nav>
 </template>
 
@@ -26,9 +26,11 @@ data(){
 }
 },
 methods:{
-toggleModal(){
+toggleModal(data){
+  console.log(data, 'DATA');
 this.showModal =!this.showModal;
-}
+},
+
 }
   }
 </script>

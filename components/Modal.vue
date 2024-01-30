@@ -1,7 +1,7 @@
 <template>
   <article class="modal-wrap">
     <div class="container">
-      <span class="icon-close" @click="onToggle"/>
+      <span class="icon-close" @click="$emit('modalClose', {hello: 'Maxim'})"/>
       <h1>Вход</h1>
       <label class="label">
         Email
@@ -21,12 +21,7 @@
 data(){return{
   email:'shmeiko',
 }},
-props: {
-  onToggle:{
-    type: Function,
-    default: () =>{}
-  }
-}
+
   }
 </script>
 
