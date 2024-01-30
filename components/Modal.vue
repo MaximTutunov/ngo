@@ -1,7 +1,7 @@
 <template>
   <article class="modal-wrap">
     <div class="container">
-      <span class="icon-close" />
+      <span class="icon-close" @click="onToggle"/>
       <h1>Вход</h1>
       <label class="label">
         Email
@@ -20,7 +20,13 @@
   export default {
 data(){return{
   email:'shmeiko',
-}}
+}},
+props: {
+  onToggle:{
+    type: Function,
+    default: () =>{}
+  }
+}
   }
 </script>
 

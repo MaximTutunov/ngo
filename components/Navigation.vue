@@ -3,12 +3,9 @@
     <Logo :title="logoText"/>
       <nuxt-link v-for ="elem in linksArray" class="link" :to="elem.to" :key="elem.title">{{elem.title}}</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
-    <button  class="button" @click="counter+=1">{{text}}</button>
-    <p>{{ counter }}</p>
-    <input type="checkbox" v-model="showModal"/>
-     <Modal v-show="showModal"/>
+    <button  class="button" @click="toggleModal">{{text}}</button>
+     <Modal v-show="showModal" :onToggle="toggleModal"/>
     </nav>
-
 </template>
 
 <script>
@@ -26,7 +23,11 @@ data(){
   {to:'/about', title:'about page'},
  ],
  showModal: false,
- counter: 0,
+}
+},
+methods:{
+toggleModal(){
+this.showModal =!this.showModal;
 }
 }
   }
@@ -61,5 +62,8 @@ data(){
   background: black;
   color: white;
   transition: .3s;
+}
+.link {
+  color: black;
 }
 </style>
