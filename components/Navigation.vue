@@ -1,9 +1,9 @@
 <template>
       <nav class="navigation">
     <Logo :title="logoText"/>
-      <nuxt-link v-for ="elem in linksArray" class="link" :to="elem.to" :key="elem.title">{{elem.title}}</nuxt-link>
+      <nuxt-link v-for ="elem in routes" class="link" :to="elem.path" :key="elem.name">{{elem.name}}</nuxt-link>
       <nuxt-link to="/about">About page</nuxt-link>
-    <button  class="button" @click="toggleModal">{{text}}</button>
+    <button  class="button" @click="toggleModal('external', $event)">{{text}}</button>
      <Modal v-show="showModal" @modalClose="toggleModal"/>
     </nav>
 </template>
@@ -26,11 +26,14 @@ data(){
 }
 },
 methods:{
-toggleModal(data){
-  console.log(data, 'DATA');
-this.showModal =!this.showModal;
+toggleModal(data, event){
+  this.showModal =!this.showModal;
+}
 },
-
+computed: {
+  routes(){
+    return this.$router.options.routes.filter((elem)=>!elem.path.includes(':'))
+  }
 }
   }
 </script>

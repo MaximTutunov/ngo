@@ -11,9 +11,7 @@
 
 <script>
   export default {
-created() {
-console.log(process.env.baseUrl, 'URL')
-}
+    
   }
 </script>
 
